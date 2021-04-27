@@ -78,3 +78,22 @@ function results(){
 function refresh(){
     document.location.reload();
 }
+
+/* função para recarregar a página e tentar novamente*/
+function refresh() {
+    document.location.reload();
+  }
+  let isDarkTheme = false;
+  
+  function switchColorTheme() {
+    const backgroundColor = isDarkTheme ? "black" : "aqua";
+    const textColor = isDarkTheme ? "aqua" : "black";
+  
+    document.documentElement.style.setProperty(
+      "--background-color",
+      backgroundColor
+    );
+    document.documentElement.style.setProperty("--text-color", textColor);
+  
+    isDarkTheme = !isDarkTheme;
+  }

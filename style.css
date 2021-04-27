@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --background-color: aqua;
+    --text-color: black;
+}
+
 @media (max-width: 600px) {
     #section1 h1{
         padding-left: 15px;
@@ -126,4 +131,15 @@
 body{
     margin: 0;
     font-family: Roboto;
+}
+
+.themeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.themeContainer button {
+    width: 30%;
 }
