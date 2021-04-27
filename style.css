@@ -159,6 +159,47 @@ body {
   font-family: Roboto;
 }
 
+select {
+  margin-left: 40px;
+  background-color: #507791;
+  color: rgb(234, 240, 237);
+  box-shadow: 0 2px 8px rgb(47, 44, 53);
+  font-family: Roboto;
+  font-size: 16px;
+  padding: 0.4em 0.5em;
+  border: 1px solid #081722;  
+  cursor: pointer; 
+  
+}
+
+option{
+  background-color: #3b586b;
+}
+
+.btn {
+  background-color: #507791;
+  border: none; 
+  color: rgb(236, 214, 11); 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 55%;
+}
+.btn:hover {
+  background-color: #3b586b;
+}
+
+button {
+  background-color: #507791;
+  border: none;     
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer;    
+}
+button:hover {
+  background-color: #3b586b;
+}
+
 .themeContainer {
   display: flex;
   flex-direction: column;

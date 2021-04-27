@@ -1,3 +1,5 @@
+let extraQuestion ="Sim!";
+let themeController = true;
 function results() {
   //5 variaveis que guardam as respostas dadas pelo usuário
   var q1;
@@ -67,6 +69,20 @@ function results() {
         document.getElementById("t" + (i + 1)).classList.add("red");
       }
     }
+  //Para inserir na repetição teria que mudar a lógica de resposta única passada pelo array, então optei por deixar separado.
+  if(q0!=="Não :["){
+    document.getElementById('correctQuestion' + (0)).innerHTML = 'Você acertou!'; //É adicionado "Você acertou" nos elementos <p> das questões que estiver correta
+    document.getElementById('correctQuestion' + (0)).classList.add("green"); //É também mudado a cor do título da questão para verde
+    document.getElementById('t' + (0)).classList.add("green");
+    console.log(respostasCorretas);
+    respostasCorretas++;
+  }
+  else{
+    document.getElementById('correctQuestion' + (0)).innerHTML = 'Você errou!';//É adicionado "Você errou" nos elementos <p> das questões que estiver errada
+    document.getElementById('correctQuestion' + (0)).classList.add("red"); //É também mudado a cor do título da questão para vermelho
+    document.getElementById('t' + (0)).classList.add("red");           
+    respostasErradas++
+  }
     let textoPopUp = "Você acertou " + respostasCorretas + " de 5!"; //Aqui é o pop-up que aparece depois de responder tudo, quantas você acertou de 5.
     /* altera o section2 criando o botão de tentar novamente */
     document.getElementById("section2").innerHTML =
@@ -83,6 +99,11 @@ function results() {
   }
   //Se o usuário não respondeu tudo, isso ocorre:
   else alert("Por favor, responda todas as questões!");
+}
+
+//pega o valor da q0
+function selected(value) {   
+  extraQuestion=value;
 }
 
 /* função para recarregar a página e tentar novamente*/
@@ -102,4 +123,19 @@ function switchColorTheme() {
   document.documentElement.style.setProperty("--text-color", textColor);
 
   isDarkTheme = !isDarkTheme;
+}
+
+function changeTheme(){
+  themeController=!themeController;
+  if(themeController===false){
+      document.getElementById("section2").style.backgroundColor="black";
+      document.getElementById("section2").style.color="white";
+      document.getElementById("theme").className='fa fa-moon-o';
+  }
+  else{
+      document.getElementById("section2").style.backgroundColor="LightBlue";
+      document.getElementById("section2").style.color="Black";
+      document.getElementById("theme").className='fa fa-sun-o';
+     
+  }
 }
